@@ -11,7 +11,7 @@ export default class CustomNavbar extends Component {
     return (
      <Navbar default collapseOnSelect>
          <Navbar.Brand>
-            <Link to="/">TimeOff.Management</Link>
+            <Link to="/">Corporate Leisure</Link>
          </Navbar.Brand>
          <Navbar.Toggle/>
        <Navbar.Collapse>

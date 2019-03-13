@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
-import { Form , Button} from 'react-bootstrap';
+import { Form ,Container, Button} from 'react-bootstrap';
+import './LogIn.css';
 
 export default class LogIn extends Component {
   render() {
     return (
-      <Form>
+      <Container className="App">
+        <Form className="form">
+        <h3>Login</h3>
       <Form.Group controlId="formBasicEmail">
         <Form.Label>Employee email</Form.Label>
         <Form.Control type="email" placeholder="Enter email" />
@@ -17,13 +20,11 @@ export default class LogIn extends Component {
         <Form.Label>Password</Form.Label>
         <Form.Control type="password" placeholder="Password" />
       </Form.Group>
-      <Form.Group controlId="formBasicChecbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
       <Button variant="primary" type="submit">
         Submit
       </Button>
     </Form>
+    </Container>
     )
   }
 }

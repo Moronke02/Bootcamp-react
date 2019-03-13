@@ -8,8 +8,8 @@ export default class Home extends Component {
     return (
       <Container>
         <Jumbotron>
-              <h2>TimeOff.Management</h2>
-              <p>Open source,simple yet powerful absence managements software for small and medium size business.</p>
+              <h2>Corporate Leisure</h2>
+              <p>Open source,simple yet powerful time off managements software for small and medium size business.</p>
               <p>Endorsed by hundreds of software developers.</p>
               <Link to="about">
                   <Button bsStyle="primary"> Sign Up</Button>

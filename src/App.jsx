@@ -2,21 +2,24 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './components/Home';
-import SignUp from './components/SignUp';
-import LogIn from './components/LogIn';
-import Navbar from './components/CustomNavbar';
+import Signup from './components/Signup';
+import Signin from './components/Signin';
 import Dashboard from './components/Dashboard';
+import Absencerequestform from './components/Absencerequestform';
+import Teamview from './components/Teamview';
 
 class App extends Component {
   render() {
     return (
       <Router>
         <div>
-          <Navbar/>
           <Route exact path="/" component={Home}/>
-          <Route path="/signup" component={SignUp}/>
-          <Route path="/login" component={LogIn}/>
+          <Route path="/signup" component={Signup}/>
+          <Route path="/signin" component={Signin}/>
           <Route path="/dashboard" component={Dashboard}/>
+          <Route path="/absencerequest" component={Absencerequestform}/>
+          <Route path="/teamview" component={Teamview}/>
+          
         </div>
       </Router> 
     );

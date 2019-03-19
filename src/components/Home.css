@@ -1,18 +1,36 @@
 .jumbotron {
     margin-bottom: 4em;
 }
-.icon-wrapper {
+h2, p , h3 {
+    text-align: center;
+}
+
+.button {
+    text-align: center;
+}
+
+.person-wrapper {
     margin-bottom: 2em;
 }
 .profile-pic {
     width: 50%;
+    height: 300px;
+
 }
-.btn-primary {
-    background-image: none;
-    border: none;
-    border-radius: 0;
-    background-color: blue;
+body{
+    overflow-x:hidden;
 }
-h4 {
-    margin-bottom: 1em;
+footer {
+    margin-top: 4em;
+    text-align: center;
+}
+.link {
+   
+    text-decoration: none;
+}
+
+
+.signin {
+    text-decoration: none;
+    color: white;
 }

@@ -1,23 +1,38 @@
-.label{
-    color: white;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 18px;
-    font-style: italic;
+input, select {
+  border-radius: 15px;
+
 }
-.control{
-    width: 230px;
-    padding: 7px;
-    border: none;
-    border-radius: 3px;
-    outline: 0;
+.secondp {
+  margin-top: 1em;
+  float: right;
 }
-button{
-    width: 100px;
-    padding: 7px;
-    font-size: 16px;
-    font-weight: 600;
-    border: 5px;
-    border-radius: 15px;
-    text-align: center;
-    outline: 0;
+
+form label, form input, select {
+  display: flex;
+  margin-bottom: 8px;
+  width: 50%;
+}
+
+form input, select {
+  padding: 5px;
+  border: solid 1px #BDC7D8;
+
+}
+
+.button1 {
+  
+  border-color: #3ac162;
+  font-weight: bold;
+  padding: 0;
+  color: #ffffff;
+}
+
+.errorMsg {
+  color: #cc0000;
+  margin-bottom: 12px;
+}
+
+.sucessMsg {
+  color: #6B8E23;
+  margin-bottom: 10px;
 }

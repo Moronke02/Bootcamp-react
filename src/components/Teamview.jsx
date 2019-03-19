@@ -10,8 +10,9 @@ export default class Teamview extends Component {
       <React.Fragment>
       <div>
           <Navbar bg="primary"  expand="lg" default collapseOnSelect >
-                <Navbar.Brand href="/">Corporate Leisure</Navbar.Brand>
+                <Navbar.Brand href="/">Corporate TimeOff</Navbar.Brand>
                 <Nav className="ml-auto">
+                <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/dashboard">Dashboard</Nav.Link>
                 <Nav.Link href="/teamview">Team View</Nav.Link>
                 <Nav.Link href="/absencerequest">New Request</Nav.Link>
@@ -51,8 +52,8 @@ export default class Teamview extends Component {
    <tr>
    <td> Oladapo Oladunjoye </td>
      <td> Human Resources </td>
-     <td> 01-06-2019 </td>
-     <td>From 01-08-2019 to 12-08-2019 </td>
+     <td> 01-03-2019 </td>
+     <td>From 01-05-2019 to 08-05-2019 </td>
      <td> Sick Leave </td>
      <td> 7</td>
      <th scope="col"><button type="submit" className="btn btn-warning btn-large" > Reject</button> </th>
@@ -61,8 +62,8 @@ export default class Teamview extends Component {
    <tr>
    <td> Akinbode Opeyemi </td>
      <td> Help Desk </td>
-     <td>12-08-2019</td>
-     <td> From 01-08-2019 to 12-08-2019</td>
+     <td>04-03-2019</td>
+     <td> From 01-07-2019 to 01-10-2019</td>
      <td> Maternity Leave </td>
      <td>90 </td>
      <th scope="col"><button type="submit" className="btn btn-warning btn-large" > Reject</button> </th>
@@ -71,8 +72,8 @@ export default class Teamview extends Component {
    <tr>
    <td> Kareem Kazeem </td>
      <td> Software</td>
-     <td> 12-06-2019 </td>
-     <td> From 06-06-2019 to 12-06-2019 </td>
+     <td> 12-03-2019 </td>
+     <td> From 31-07-2019 to 14-08-2019 </td>
      <td> Vacation</td>
      <td> 14</td>
      <th scope="col"><button type="submit" className="btn btn-warning btn-large" > Reject</button> </th>
@@ -81,8 +82,8 @@ export default class Teamview extends Component {
    <tr>
    <td>  Akinsola Oludotun  </td>
      <td>HSE</td>
-     <td> 01-06-2019 </td>
-     <td>  From 01-06-2019 to 12-06-2019</td>
+     <td> 19-03-2019 </td>
+     <td>  From 20-03-2019 to 23-03-2019</td>
      <td> Paternity Leave </td>
      <td> 3</td>
      <th scope="col"><button type="submit" className="btn btn-warning btn-large" > Reject</button> </th>
@@ -92,7 +93,7 @@ export default class Teamview extends Component {
    <td> Charles Chiduziam </td>
      <td>Logistics</td>
      <td>12-09-2019 </td>
-     <td> From 01-09-2019 to 12-09-2019 </td>
+     <td> From 12-03-2019 to 15-03-2019 </td>
      <td> Sick Leave</td>
      <td> 3 </td>
      <th scope="col"><button type="submit" className="btn btn-warning btn-large" >Reject</button> </th>
@@ -127,14 +128,14 @@ export default class Teamview extends Component {
    <tr>
    <td> Vacation </td>
      <td>14</td>
-     <td>From 01-08-2019 to 12-08-2019 </td>
+     <td>From 31-07-2019 to 14-08-2019 </td>
      <td>  Mayowa </td>
      <td> Approved </td>
    </tr>
    <tr>
    <td> Sick Leave </td>
      <td>3</td>
-     <td>From 01-08-2019 to 12-08-2019 </td>
+     <td> From 12-03-2019 to 15-03-2019 </td>
      <td>  Mayowa </td>
      <td> Approved </td>
    </tr>
@@ -142,7 +143,7 @@ export default class Teamview extends Component {
    <tr>
    <td> Maternity Leave </td>
      <td>90</td>
-     <td>From 01-08-2019 to 12-08-2019 </td>
+     <td>From 01-07-2019 to 01-10-2019</td>
      <td>  Mayowa </td>
      <td> Pending</td>
    </tr>
@@ -157,7 +158,7 @@ export default class Teamview extends Component {
            <nav className="navbar  fixed-bottom navbar-light bg-light">
            
            </nav>
-           <footer>&copy;Corporate Leisure 2019</footer>
+           <div><footer>&copy;Corporate TimeOff 2019</footer></div>
            </div>
            
   </React.Fragment>

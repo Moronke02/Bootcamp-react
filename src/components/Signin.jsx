@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-//import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Nav, Navbar, Button} from 'react-bootstrap'
+import {Nav, Navbar} from 'react-bootstrap'
 import './Signin.css';
 
 class Signin extends Component{
@@ -81,11 +80,10 @@ render() {
     <React.Fragment>
               <div>
               <Navbar  bg="primary" expand="lg" default collapseOnSelect>
-         <Navbar.Brand href="/">Corporate Leisure</Navbar.Brand>
+         <Navbar.Brand href="/">Corporate TimeOff</Navbar.Brand>
             <Nav className="ml-auto">
-            
-            <Nav.Link className="link" href="/Signin"><Button className="signin-btn">Sign In</Button></Nav.Link>
-            <Nav.Link className="pricing" href="/dashboard"><Button>Dashboard</Button></Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/dashboard">Dashboard</Nav.Link>
             </Nav>
      </Navbar>
               </div>
@@ -122,6 +120,7 @@ render() {
         <div className="container-fluid"  style={{padding:"0px"}}>
             <nav className="navbar  fixed-bottom navbar-light bg-light">
             </nav>
+            <footer>&copy;Corporate TimeOff 2019</footer>
             </div>
 
     </React.Fragment>

@@ -70,8 +70,9 @@ export default class Absencerequestform extends React.Component {
             <div>
               <div>
               <Navbar bg="primary"  expand="lg" default collapseOnSelect >
-                <Navbar.Brand href="/">Corporate Leisure</Navbar.Brand>
+                <Navbar.Brand href="/">Corporate TimeOff</Navbar.Brand>
                 <Nav className="ml-auto">
+                <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/dashboard">Dashboard</Nav.Link>
                 <Nav.Link href="/teamview">Team View</Nav.Link>
                 <Nav.Link href="/absencerequest">New Request</Nav.Link>
@@ -92,7 +93,7 @@ export default class Absencerequestform extends React.Component {
 
           
           <div class="form-group">
-            <label class="control-label">Leave type:</label>
+            <label class="control-label">Type</label>
             <select class="form-control" id="leave_type" name="leave_type" value={this.state.fields.leave_type} onChange={this.handleChange}>
                 <option></option>
                 <option value="0" data-tom="Vacation">Vacation</option>
@@ -106,7 +107,7 @@ export default class Absencerequestform extends React.Component {
           </div>
 
           <div class="form-group">
-            <label for="from" class="control-label">From:</label>
+            <label for="from" class="control-label">From</label>
             <div class="row">
               <div class="col-md-5">
                 <select class="form-control" name="from_date_part">
@@ -126,7 +127,7 @@ export default class Absencerequestform extends React.Component {
           </div>
 
           <div class="form-group">
-            <label for="to" class="control-label">To:</label>
+            <label for="to" class="control-label">To</label>
             <div class="row">
               <div class="col-md-5">
                 <select class="form-control" name="to_date_part">
@@ -147,7 +148,7 @@ export default class Absencerequestform extends React.Component {
           </div>
 
           <div class="form-group">
-            <label for="leave_type" class="control-label">Reason:</label>
+            <label for="leave_type" class="control-label">Reason</label>
             <textarea class="form-control" id="leave_reason" name="reason"></textarea>
           </div>
 
@@ -160,6 +161,7 @@ export default class Absencerequestform extends React.Component {
     </form>
     </div>
   </div>
+  <div><footer>&copy;Corporate TimeOff 2019</footer></div>
   </div>
   
         );

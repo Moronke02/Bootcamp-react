@@ -11,7 +11,7 @@ export default class Home extends Component {
         <div>
         <Navbar  bg="primary" expand="lg" default collapseOnSelect>
          <Navbar.Brand href="/">
-         Corporate Leisure 
+         Corporate TimeOff 
          </Navbar.Brand>
             <Nav className="ml-auto">
             
@@ -22,8 +22,8 @@ export default class Home extends Component {
      </div>
       <Container>
         <Jumbotron>
-              <h2>Corporate Leisure</h2>
-              <p>Open source,simple yet powerful time off managements software for small and medium size business.</p>
+              <h2>Corporate TimeOff</h2>
+              <p>Open source,simple yet powerful timeoff managements software for small and medium size business.</p>
               <p>Endorsed by hundreds of software developers.</p>
               <Link to="signup">
                   <Button bsStyle="primary" href="/signup"> Sign Up</Button>
@@ -33,19 +33,22 @@ export default class Home extends Component {
                <Col xs={12} sm={4} className="icon-wrapper">
                    <Image src="assets/family.jpg" circle className="profile-pic" roundedCircle/>
                    <h4>Family</h4>
+                   <p>To spend more time with your family.</p>
                </Col>
                <Col xs={12} sm={4} className="icon-wrapper">
                    <Image src="assets/healthcare.jpg" circle className="profile-pic" roundedCircle/>
                    <h4>Healthcare</h4>
+                   <p>Going for a thorough medical checkup at your own convenient time.</p>
                </Col>
                <Col xs={12} sm={4} className="icon-wrapper">
                    <Image src="assets/maternity.jpg" circle className="profile-pic" roundedCircle/>
                    <h4>Maternity</h4>
+                   <p>Planning to welcome a child.</p>
                   
                </Col>
           </Row>
-          
-          <footer>&copy;Corporate Leisure 2019</footer>
+          <h5>Planning your timeoff...</h5>
+          <footer>&copy;Corporate TimeOff 2019</footer>
           </Container>
             </div>
     )

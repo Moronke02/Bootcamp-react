@@ -192,7 +192,7 @@ export default class Signup extends React.Component {
     <div id="main-registration-container">
 		 <div>
          <Navbar bg="primary"  expand="lg" default collapseOnSelect >
-                <Navbar.Brand href="/">Corporate Leisure</Navbar.Brand>
+                <Navbar.Brand href="/">Corporate TimeOff</Navbar.Brand>
                 <Nav className="ml-auto">
                 <Nav.Link href="/dashboard">Dashboard</Nav.Link>
                 <Nav.Link href="/teamview">Team View</Nav.Link>
@@ -583,7 +583,7 @@ export default class Signup extends React.Component {
 <button type="submit" className="btn btn-primary btn-large signinbutton"> Submit</button>
         </form>
     </div>
-		<footer>&copy; Corporate Leisure 2019</footer>
+		<footer>&copy; Corporate TimeOff 2019</footer>
   </div>
 </div>
 

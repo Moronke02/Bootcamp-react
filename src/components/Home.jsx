@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import {Navbar, Nav, Container, Button,} from 'react-bootstrap';
+import {Navbar, Nav, Container, Button,Row,Image,Col,} from 'react-bootstrap';
 import './Home.css';
 //import background from '../background.jpg';
 
@@ -30,38 +30,24 @@ export default class Home extends Component {
               <a class="btn btn-primary btn-lg" href="/signup" role="button">Sign Up</a>
               </Link>
           </div>
-          <div class="person-wrapper">
-          <div class="row">
-          <div class="row show-grid text-center">
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <img src="assets/family.jpg" alt=""/>
-              <div class="caption">
-                <h3> Family</h3>
-                <p>To spend more time with your family.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <img src="assets/healthcare.jpg" alt=""/>
-              <div class="caption">
-                <h3> Healthcare</h3>
-                <p>Going for a thorough maedical checkup at your own convenient time.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <img src="assets/maternity.jpg" alt=""/>
-              <div class="caption">
-                <h3>Maternity</h3>
-                <p>Welcoming a child</p>
-              </div>
-            </div>
-          </div>
-          </div>
-          </div>
+          <div>
+          <Row className="show-grid text-center">
+                <Col xs={12} sm={4} className="person-wrapper">
+                    <Image src="assets/family.jpg"  className="profile-pic"/>
+                    <p>To spend more time with your family.</p>
+                </Col>
+                
+                <Col xs={12} sm={4} className="person-wrapper">
+                    <Image src="assets/healthcare.jpg"  className="profile-pic"/>
+                    <p>Going for a thorough medical checkup at your own convenient time.</p>
+                </Col>
+                <Col xs={12} sm={4} className="person-wrapper">
+                    <Image src="assets/maternity.jpg"  className="profile-pic"/>
+                    <p>Welcoming a child</p>
+                </Col>
+
+
+            </Row>
           </div>
           
           <h5>Planning your timeoff...</h5>

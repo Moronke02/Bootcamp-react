@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import {Navbar, Nav, Jumbotron,Container, Row, Col, Image, Button,} from 'react-bootstrap';
+import {Navbar, Nav, Container, Button,} from 'react-bootstrap';
 import './Home.css';
-//import office from '../office.jpg';
+//import background from '../background.jpg';
 
 export default class Home extends Component {
   render() {
@@ -16,37 +16,54 @@ export default class Home extends Component {
             <Nav className="ml-auto">
             
             <Nav.Link className="link" href="/Signin"><Button className="signin-btn">Sign In</Button></Nav.Link>
-            <Nav.Link className="pricing" href="/dashboard"><Button>Dashboard</Button></Nav.Link>
             </Nav>
      </Navbar>
      </div>
       <Container>
-        <Jumbotron>
-              <h2>Corporate TimeOff</h2>
-              <p>Open source,simple yet powerful timeoff managements software for small and medium size business.</p>
-              <p>Endorsed by hundreds of software developers.</p>
+      <div class="jumbotron">
+ 
+              <h2 class="display-4">Corporate TimeOff</h2>
+              <p class="lead">Open source,simple yet powerful timeoff managements software for small and medium size business.</p>
+              <hr class="my-4"/>
+              <p class="lead">Endorsed by hundreds of software developers.</p>
               <Link to="signup">
-                  <Button bsStyle="primary" href="/signup"> Sign Up</Button>
+              <a class="btn btn-primary btn-lg" href="/signup" role="button">Sign Up</a>
               </Link>
-          </Jumbotron>
-          <Row className="show-grid text-center">
-               <Col xs={12} sm={4} className="icon-wrapper">
-                   <Image src="assets/family.jpg" circle className="profile-pic" roundedCircle/>
-                   <h4>Family</h4>
-                   <p>To spend more time with your family.</p>
-               </Col>
-               <Col xs={12} sm={4} className="icon-wrapper">
-                   <Image src="assets/healthcare.jpg" circle className="profile-pic" roundedCircle/>
-                   <h4>Healthcare</h4>
-                   <p>Going for a thorough medical checkup at your own convenient time.</p>
-               </Col>
-               <Col xs={12} sm={4} className="icon-wrapper">
-                   <Image src="assets/maternity.jpg" circle className="profile-pic" roundedCircle/>
-                   <h4>Maternity</h4>
-                   <p>Planning to welcome a child.</p>
-                  
-               </Col>
-          </Row>
+          </div>
+          <div class="person-wrapper">
+          <div class="row">
+          <div class="row show-grid text-center">
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <img src="assets/family.jpg" alt=""/>
+              <div class="caption">
+                <h3> Family</h3>
+                <p>To spend more time with your family.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <img src="assets/healthcare.jpg" alt=""/>
+              <div class="caption">
+                <h3> Healthcare</h3>
+                <p>Going for a thorough maedical checkup at your own convenient time.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <img src="assets/maternity.jpg" alt=""/>
+              <div class="caption">
+                <h3>Maternity</h3>
+                <p>Welcoming a child</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          
           <h5>Planning your timeoff...</h5>
           <footer>&copy;Corporate TimeOff 2019</footer>
           </Container>

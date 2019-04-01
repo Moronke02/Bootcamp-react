@@ -194,6 +194,7 @@ export default class Signup extends React.Component {
          <Navbar bg="primary"  expand="lg" default collapseOnSelect >
                 <Navbar.Brand href="/">Corporate TimeOff</Navbar.Brand>
                 <Nav className="ml-auto">
+								<Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/dashboard">Dashboard</Nav.Link>
                 <Nav.Link href="/teamview">Team View</Nav.Link>
                 <Nav.Link href="/absencerequest">New Request</Nav.Link>

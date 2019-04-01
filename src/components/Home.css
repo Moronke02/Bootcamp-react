@@ -1,7 +1,12 @@
+
 .jumbotron {
-    margin-bottom: 4em;
+    margin-top: 20px;
+    background-image: url(office.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-h2, p , h3, h5 {
+    
+ h4, h5 {
     text-align: center;
 }
 

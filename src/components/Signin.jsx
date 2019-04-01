@@ -1,137 +1,134 @@
-import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {Nav, Navbar} from 'react-bootstrap'
-import './Signin.css';
+import React from "react";
+import { Link } from "react-router-dom"
+import { Nav, Navbar} from "react-bootstrap"
 
-class Signin extends Component{
-     constructor(props){
-        super(props);
+import "./Signin.css";
 
+export default class Signin extends React.Component {
+    constructor() {
+      super();
+      this.state = {
+        fields: {},
+        errors: {}
+      }
 
-            this.state = {
-                initialState : {
-                    email: '',
-                    fullname:'',
-                     pass: '',
-                     emailError: '',
-                     fullnameError:'',
-                     passError:''
-                }
-            };
-                 
-           
-            
-            this.handleChange = this.handleChange.bind(this);
-            this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleChange = this.handleChange.bind(this);
+      this.submituserRegistrationForm = this.submituserRegistrationForm.bind(this);
 
-}
+    };
 
-handleChange(event){
-    const isCheckbox = event.target.type === "checkbox;"
-    this.setState({
-        [event.target.name]: isCheckbox
-            ? event.target.checked
-            : event.target.value
-    });
-    const isValid = this.validate(event.target.value);
-    if (isValid){
-        console.log(this.state);
-        this.setState(this.initialState)
+    handleChange(e) {
+      let fields = this.state.fields;
+      fields[e.target.name] = e.target.value;
+      this.setState({
+        fields
+      });
+
     }
 
-   
-}
+    submituserRegistrationForm(e) {
+      e.preventDefault();
+      if (this.validateForm()) {
+          let fields = {};
+          fields["emailid"] = "";
+		  fields["password"] = "";
+          this.setState({fields:fields});
+          window.location.href="/dashboard";
+          
+          
+      }
 
-            validate = (data) => {
-                let fullnameError = "";
-                let emailError = "";
-            
-                var fnameExp = /^[a-zA-Z]+$/;
+    }
 
-                
-                if(!data.match(fnameExp)){
-                    fullnameError = "Please use letters only" 
-                }
+    validateForm() {
 
-                if(!this.state.email){
-                    emailError = "invalid email"
-                }
-
-                if (emailError || fullnameError){
-                    this.setState({ emailError, fullnameError});
-                    return false;
-                }
-                return true;
-            };
-           
+      let fields = this.state.fields;
+      let errors = {};
+      let formIsValid = true;
 
 
+      if (!fields["emailid"]) {
+        formIsValid = false;
+        errors["emailid"] = "*Please enter your email-ID.";
+      }
+
+      if (typeof fields["emailid"] !== "undefined") {
+        var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+        if (!pattern.test(fields["emailid"])) {
+          formIsValid = false;
+          errors["emailid"] = "*Please enter valid email-ID.";
+        }
+      }
 
 
+      if (!fields["password"]) {
+        formIsValid = false;
+        errors["password"] = "*Please enter your password.";
+      }
 
-handleSubmit(event) {
-    event.preventDefault();
-   
-   
-};
+      if (typeof fields["password"] !== "undefined") {
+        if (!fields["password"].match(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/)) {
+          formIsValid = false;
+          errors["password"] = "*Please enter a minimum of eight characters with at least a number and a letter.";
+        }
+      }
 
-render() {
-            return(
-    <React.Fragment>
-              <div>
-              <Navbar  bg="primary" expand="lg" default collapseOnSelect>
-         <Navbar.Brand href="/">Corporate TimeOff</Navbar.Brand>
-            <Nav className="ml-auto">
-            <Nav.Link href="/">Home</Nav.Link>
+      this.setState({
+        errors: errors
+      });
+      return formIsValid;
+
+
+    }
+    render() {
+        return (
+          <div>
+          <div>
+          <Navbar bg="primary"  expand="lg" default collapseOnSelect >
+                <Navbar.Brand href="/">Corporate TimeOff</Navbar.Brand>
+                <Nav className="ml-auto">
+                <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/dashboard">Dashboard</Nav.Link>
-            </Nav>
-     </Navbar>
-              </div>
-    
-
-                <div className="bgpicture">
-    
-            <div className="container">
+                <Nav.Link href="/teamview">Team View</Nav.Link>
+                <Nav.Link href="/absencerequest">New Request</Nav.Link>
+                </Nav>
+            
+               </Navbar>
+          </div>
+        
+          <div className="container">
             <h3 className="heading"> Login </h3>
             <div className="pageform">
-                
-                <form onSubmit={this.handleSubmit}>
+            <form onSubmit= {this.submituserRegistrationForm} >
+                        <div className="form-group">
+                        <label htmlFor="email" >Email</label>
+                        <input type="text" className="form-control"  name="emailid" value={this.state.fields.emailid} onChange={this.handleChange}  />
+                        <div className="errorMsg">{this.state.errors.emailid}</div>
+                        </div>
 
-                    <div className="form-group ">
-             <label htmlFor="email">Email:</label>
-             <input type="email" className="form-control" required name="email"  value={this.state.email} onChange={this.handleChange.bind(this)} placeholder="Email Address"/>
-            
-        </div>
-        
-        <div className="form-group">
-             <label htmlFor="password"> Password:</label>
-             <input type="password" className="form-control" name="pass" required placeholder="password"/>
-            
-        </div>
-        
+                        <div className="form-group">
+                        <label htmlFor="password">Password</label>
+                        <input type="password"  className="form-control" name="password" value={this.state.fields.password} onChange={this.handleChange} />
+                        <div className="errorMsg">{this.state.errors.password}</div>
+                        <div>
+                        <button type="submit" className="btn btn-primary btn-large signinbutton" href="/dashboard">Sign in</button>
+                        <p className="secondp"><Link to="">Forgot password?</Link>||<Link to="/Signup">Create account</Link></p>
+                         </div>
+                        </div>
+           </form>
 
-        {/* <button type="button" > SIGN IN </button> */}
-        <button type="submit" className="btn btn-primary btn-large signinbutton">Sign in </button>
-                </form>
-            </div>
-    </div>
+       </div>
+	
+     </div>
+     <footer>&copy;Corporate TimeOff 2019</footer>
+     </div>
+     
+     
+      );
+  }
 
-</div>
-        <div className="container-fluid"  style={{padding:"0px"}}>
-            <nav className="navbar  fixed-bottom navbar-light bg-light">
-            </nav>
-            <footer>&copy;Corporate TimeOff 2019</footer>
-            </div>
-
-    </React.Fragment>
-                        
-
-
-            )
-    }
 
 }
 
 
-
-export default Signin;
+   

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-//import { Link } from 'react-router-dom';
 import {Nav, Navbar} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Teamview.css'

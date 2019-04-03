@@ -152,7 +152,7 @@ export default class Signup extends React.Component {
         }
 			}
 			if (typeof fields["age"] !== "undefined") {
-        if (fields["age"].match(/\d/) && fields['age'] < 18 ) {
+        if (fields["age"].match(/\d/) && fields['age'] > 18 ) {
           formIsValid = false;
           errors["age"] = "*please, only people above 18 can register.";
         }

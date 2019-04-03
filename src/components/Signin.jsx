@@ -88,9 +88,6 @@ export default class Signin extends React.Component {
                 <Navbar.Brand href="/">Corporate TimeOff</Navbar.Brand>
                 <Nav className="ml-auto">
                 <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/dashboard">Dashboard</Nav.Link>
-                <Nav.Link href="/teamview">Team View</Nav.Link>
-                <Nav.Link href="/absencerequest">New Request</Nav.Link>
                 </Nav>
             
                </Navbar>

@@ -122,7 +122,7 @@ export default class Dashboard extends React.Component{
                         </Row>
                     </Container><br></br>
                     <h2>Calender <button class="btn btn-dark toggle-button" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" id="toggle" onClick={this.handleClick}>
-                    {this.state.isToggleOn ? 'Show more' : 'Less....'}
+                    {this.state.isToggleOn ? 'show more' : 'show less'}
   </button></h2><br></br>
                     
                     <Container>

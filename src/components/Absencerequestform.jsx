@@ -7,65 +7,60 @@ import { Nav, Navbar } from "react-bootstrap";
 
 
 export default class Absencerequestform extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     
    
     this.state = {
-      fields: {},
-      errors: {}
-    }
+      valuestart: "",
+      valueend: "",
+      errorstart:"",
+      errorend:"",
+      date: new Date()
+    };
 
-    this.handleChange = this.handleChange.bind(this);
-    this.submituserRegistrationForm = this.submituserRegistrationForm.bind(this);
+    this.handleChangestart = this.handleChangestart.bind(this);
+    this.handleChangeend = this.handleChangeend.bind(this);
 
   };
 
-  handleChange(e) {
-    let fields = this.state.fields;
-    fields[e.target.name] = e.target.value;
-    this.setState({
-      fields
-    });
-
+  handleChangestart(event) {
+    let date = new Date()
+    if(Date.parse(event.target.value) > Date.parse(date.toDateString()) ){
+      this.setState({valuestart: event.target.value})
+    }
+    if(Date.parse(event.target.value) < Date.parse(date.toDateString()) ){
+      this.setState({errorstart:"invalid date"})
+    }else{
+      this.setState({errorstart:""})
+    }
   }
 
-  submituserRegistrationForm(e) {
-    e.preventDefault();
-    if (this.validateForm()) {
-        let fields = {};
-        fields["leave_type"] = "";
-   
-        
-        this.setState({fields:fields});
-        alert("Form submitted");
+  handleChangeend(event) {
+    let date = new Date()
+    if(Date.parse(event.target.value) > Date.parse(date.toDateString()) ){
+      this.setState({valueend: event.target.value});
+    }
+    if(Date.parse(event.target.value) < Date.parse(date.toDateString()) ){
+      this.setState({errorend:"invalid date"})
+    }else{
+      this.setState({errorend:""})
     }
 
   }
   
-  validateForm() {
-
-    let fields = this.state.fields;
-    let errors = {};
-    let formIsValid = true;
-
-    if (!fields["leave_type"]) {
-      formIsValid = false;
-      errors["leave_type"] = "*Please select a Leave type.";
-    }
-    
-   
-    this.setState({
-      errors: errors
-    });
-    return formIsValid;
-
-
-  }
-
-
 
     render(){
+      let start = Date.parse(this.state.valuestart)
+      let end = Date.parse(this.state.valueend)
+  
+      if(end < start ){
+        this.setState({valueend: ""})
+        this.setState({errorend:"invalid date"})
+      }
+      
+      let duration = Math.round((end - start) * (1.1574 * 0.00000001)) 
+  
         return (
             <div>
               <div>
@@ -86,15 +81,13 @@ export default class Absencerequestform extends React.Component {
     <form method="post"  name="userRegistrationForm"  onSubmit= {this.submituserRegistrationForm} >
       <div class="modal-header">
       <h5 class="modal-title" id="exampleModalLabel">New request</h5>
-        {/*<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>*/}
-       
       </div>
       <div class="modal-body">
 
           
           <div class="form-group">
             <label class="control-label">Type</label>
-            <select class="form-control" id="leave_type" name="leave_type" value={this.state.fields.leave_type} onChange={this.handleChange}>
+            <select class="form-control adjust"  required>
                 <option></option>
                 <option value="0" data-tom="Vacation">Vacation</option>
                 <option value="1" data-tom="International Conference">International Conference</option>
@@ -103,7 +96,7 @@ export default class Absencerequestform extends React.Component {
                 <option value="4" data-tom="Paternity Leave">Paternity Leave</option>
                 <option value="5" data-tom="other">Other</option>
             </select>
-            <div className="errorMsg">{this.state.errors.leave_type}</div>
+            <div className="errorMsg"></div>
           </div>
 
           <div class="form-group">
@@ -120,7 +113,9 @@ export default class Absencerequestform extends React.Component {
               <div class="col-md-7">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                  <input type="date" class="form-control book-leave-from-input" id="from" data-provide="datepicker" data-date-autoclose="1" data-date-format="yyyy-mm-dd" data-date-week-start="1" name="from_date" />
+                  <input type="date"  id="start" name="trip-start"  min="2019-04-06" max="2019-12-31" required
+                   onChange={this.handleChangestart} />
+                    <p> {this.state.errorstart}</p>
                 </div>
               </div>
             </div>
@@ -139,10 +134,16 @@ export default class Absencerequestform extends React.Component {
               <div class="col-md-7">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                  <input type="date" class="form-control book-leave-to-input" id="to" data-provide="datepicker" data-date-autoclose="1" data-date-format="yyyy-mm-dd" data-date-week-start="1"  name="to_date"  />
-                
+                  <input type="date" id="end" name="trip-start"
+                  min="2019-04-06" max="2019-12-31" required
+                   onChange={this.handleChangeend}  />
+                   <p>{this.state.errorend}</p>
                   
                 </div>
+                <div>
+                      <label htmlFor="name">Duration:</label>
+                      <input type="text" id="name" name="name" disabled placeholder={duration}></input>
+                  </div>
               </div>
             </div>
           </div>

@@ -1,4 +1,0 @@
-[build]
-base = "netlify-react/"
-publish ="netlify-react/"
-command ="npm build" 
